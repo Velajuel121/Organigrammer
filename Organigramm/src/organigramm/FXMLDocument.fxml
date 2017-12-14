@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="279.0" prefWidth="483.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="organigramm.FXMLDocumentController">
+   <children>
+      <HBox layoutY="-36.0" prefHeight="34.0" prefWidth="483.0" AnchorPane.bottomAnchor="245.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="addNew" mnemonicParsing="false" onAction="#handleAddNewEmployeeButton" prefHeight="36.0" prefWidth="78.0" text="Neu" />
+            <Button fx:id="delete" mnemonicParsing="false" onAction="#handleDeleteEmployeeButton" prefHeight="36.0" prefWidth="78.0" text="Löschen" />
+            <Button fx:id="edit" mnemonicParsing="false" onAction="#handleEditEmployeeButton" prefHeight="36.0" prefWidth="78.0" text="Bearbeiten" />
+            <Button fx:id="exit" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="36.0" prefWidth="78.0" text="Exit" />
+         </children>
+      </HBox>
+      <TableView fx:id="employeeTableView" layoutY="32.0" prefHeight="247.0" prefWidth="483.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="C1" />
+          <TableColumn prefWidth="75.0" text="C2" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
