@@ -12,8 +12,8 @@ import java.util.Date;
  * @author felix
  */
 public class Skills {
-    private String elementarySchool;
-    private String secoundarySchool;
+    private final String elementarySchool;
+    private final String secoundarySchool;
     private String college;
     private String educations;
     private double yearsOfWorkExperience;

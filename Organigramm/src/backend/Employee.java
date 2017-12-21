@@ -12,6 +12,7 @@ import java.util.Date;
  * @author felix
  */
 public class Employee {
+    private String title;
     private final int id;
     private final int socialSecurityNumber;
     private String firstname;
@@ -23,8 +24,18 @@ public class Employee {
     private final char sex;
     private String email;
     private final int yearsAtCompany;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
     
 
+    
+    
     public int getId() {
         return id;
     }
@@ -94,7 +105,8 @@ public class Employee {
     }
 
     
-    public Employee(int id, int socialSecurityNumber, String firstname, String lastname, Skills skills, Date birthdate, String adress, String town, char sex, String email, int yearsAtCompany) {
+    public Employee(String title,int id, int socialSecurityNumber, String firstname, String lastname, Skills skills, Date birthdate, String adress, String town, char sex, String email, int yearsAtCompany) {
+        this.title = title;
         this.id = id;
         this.socialSecurityNumber = socialSecurityNumber;
         this.firstname = firstname;
