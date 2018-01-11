@@ -17,8 +17,8 @@ public class Skills {
     private String college;
     private String educations;
     private double yearsOfWorkExperience;
-    private String[] certifikates;
-    private Date[] expireDate;
+    private String certificates;
+    private String expireDate;
 
     public void setCollege(String college) {
         this.college = college;
@@ -32,11 +32,11 @@ public class Skills {
         this.yearsOfWorkExperience = yearsOfWorkExperience;
     }
 
-    public void setCertifikates(String[] certifikates) {
-        this.certifikates = certifikates;
+    public void setCertifikates(String certifikates) {
+        this.certificates = certifikates;
     }
 
-    public void setExpireDate(Date[] expireDate) {
+    public void setExpireDate(String expireDate) {
         this.expireDate = expireDate;
     }
 
@@ -64,21 +64,21 @@ public class Skills {
         return yearsOfWorkExperience;
     }
 
-    public String[] getCertifikates() {
-        return certifikates;
+    public String getCertifikates() {
+        return certificates;
     }
 
-    public Date[] getExpireDate() {
+    public String getExpireDate() {
         return expireDate;
     }
 
-    public Skills(String elementarySchool, String secoundarySchool, String college, String educations, double yearsOfWorkExperience, String[] certifikates, Date[] expireDate) {
+    public Skills(String elementarySchool, String secoundarySchool, String college, String educations, double yearsOfWorkExperience, String certifikates,String expireDate) {
         this.elementarySchool = elementarySchool;
         this.secoundarySchool = secoundarySchool;
         this.college = college;
         this.educations = educations;
         this.yearsOfWorkExperience = yearsOfWorkExperience;
-        this.certifikates = certifikates;
+        this.certificates = certifikates;
         this.expireDate = expireDate;
     }
 

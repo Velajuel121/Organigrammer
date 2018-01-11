@@ -1,37 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="997.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="organigramm.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="545.0" prefWidth="997.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="organigramm.FXMLDocumentController">
    <children>
-      <HBox layoutY="-36.0" prefHeight="34.0" prefWidth="483.0" AnchorPane.bottomAnchor="245.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Button fx:id="addNew" mnemonicParsing="false" onAction="#handleAddNewEmployeeButton" prefHeight="36.0" prefWidth="78.0" text="Neu" />
-            <Button fx:id="delete" mnemonicParsing="false" onAction="#handleDeleteEmployeeButton" prefHeight="36.0" prefWidth="78.0" text="Löschen" />
-            <Button fx:id="edit" mnemonicParsing="false" onAction="#handleEditEmployeeButton" prefHeight="36.0" prefWidth="78.0" text="Bearbeiten" />
-            <Button fx:id="exit" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="36.0" prefWidth="78.0" text="Exit" />
-         </children>
-      </HBox>
-      <TableView fx:id="employeeTableView" layoutY="32.0" prefHeight="418.0" prefWidth="1059.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="32.0">
-        <columns>
-          <TableColumn prefWidth="97.0" text="Bezeichnung" />
-          <TableColumn prefWidth="35.0" text="ID" />
-            <TableColumn prefWidth="112.0" text="Sozialversicherungsnummer" />
-            <TableColumn prefWidth="90.0" text="Vorname" />
-            <TableColumn prefWidth="87.0" text="Nachname" />
-            <TableColumn prefWidth="69.0" text="Ausbildung" />
-            <TableColumn prefWidth="69.0" text="Geburtstag" />
-            <TableColumn prefWidth="105.0" text="Adresse" />
-            <TableColumn prefWidth="84.0" text="Stadt" />
-            <TableColumn minWidth="2.0" prefWidth="60.0" text="Geschlecht" />
-            <TableColumn prefWidth="119.0" text="Email" />
-            <TableColumn minWidth="0.0" prefWidth="69.0" text="Jahre in der Firma" />
-        </columns>
-      </TableView>
-      <AmbientLight color="CHARTREUSE" layoutX="532.0" layoutY="-148.0" lightOn="true" rotate="4.2" />
+      <BorderPane prefHeight="545.0" prefWidth="997.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <HBox prefHeight="34.0" prefWidth="483.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="addNew" mnemonicParsing="false" onAction="#handleAddNewEmployeeButton" prefHeight="36.0" prefWidth="78.0" text="Neu" />
+                  <Button fx:id="delete" mnemonicParsing="false" onAction="#handleDeleteEmployeeButton" prefHeight="36.0" prefWidth="78.0" text="Löschen" />
+                  <Button fx:id="edit" mnemonicParsing="false" onAction="#handleEditEmployeeButton" prefHeight="36.0" prefWidth="78.0" text="Bearbeiten" />
+                  <Button fx:id="exit" mnemonicParsing="false" onAction="#handleExitButton" prefHeight="36.0" prefWidth="78.0" text="Exit" />
+               </children>
+            </HBox>
+         </top>
+         <left>
+            <TableView fx:id="employeeTableView" prefHeight="511.0" prefWidth="607.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="97.0" text="Bezeichnung" />
+                <TableColumn prefWidth="35.0" text="ID" />
+                  <TableColumn prefWidth="112.0" text="Sozialversicherungsnummer" />
+                  <TableColumn prefWidth="90.0" text="Vorname" />
+                  <TableColumn prefWidth="87.0" text="Nachname" />
+                  <TableColumn prefWidth="69.0" text="Ausbildung" />
+                  <TableColumn prefWidth="69.0" text="Geburtstag" />
+                  <TableColumn prefWidth="105.0" text="Adresse" />
+                  <TableColumn prefWidth="84.0" text="Stadt" />
+                  <TableColumn minWidth="2.0" prefWidth="60.0" text="Geschlecht" />
+                  <TableColumn prefWidth="119.0" text="Email" />
+                  <TableColumn minWidth="0.0" prefWidth="69.0" text="Jahre in der Firma" />
+              </columns>
+            </TableView>
+         </left>
+         <right>
+            <GridPane prefHeight="511.0" prefWidth="376.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="29.0" prefWidth="188.0" text="Vorschule">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField prefHeight="24.0" prefWidth="188.0" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label prefHeight="29.0" prefWidth="188.0" text="Hauptschule/Gymnasium" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="29.0" prefWidth="188.0" text="Auslaufdatum der Zertifikate" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="29.0" prefWidth="188.0" text="Zertifikate" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="29.0" prefWidth="188.0" text="Ausbildungen" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="29.0" prefWidth="188.0" text="Oberstufe" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextArea prefHeight="38.0" prefWidth="188.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </TextArea>
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </TextArea>
+                  <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                  </TextArea>
+               </children>
+            </GridPane>
+         </right>
+      </BorderPane>
    </children>
 </AnchorPane>

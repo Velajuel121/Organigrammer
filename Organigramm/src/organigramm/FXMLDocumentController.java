@@ -6,6 +6,7 @@
 package organigramm;
 
 import backend.Employee;
+import backend.Skills;
 import java.net.URL;
 import java.sql.Date;
 import java.util.ResourceBundle;
@@ -17,6 +18,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 /**
  *
@@ -45,8 +48,8 @@ public class FXMLDocumentController implements Initializable {
     private TableColumn fn;
     @FXML
     private TableColumn ln;
-    @FXML
-    private TableColumn skills;
+//    @FXML
+//    private TableColumn skills;
     @FXML
     private TableColumn birthdate;
     @FXML
@@ -60,22 +63,37 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TableColumn yearsIn;
     
+    
+    @FXML
+    private TextField primarySchool;
+    @FXML
+    private TextField secondarySchool;
+    @FXML
+    private TextField college;
+    @FXML
+    private TextArea education;
+    @FXML
+    private TextArea certificates;
+    @FXML
+    private TextArea expireDate;
+    
+    
     private ObservableList<Employee> employees;
     
     @FXML
     private void handleAddNewEmployeeButton(ActionEvent event) {
         System.out.println("Clicked Add button");
         TableRow<Employee> newRow = new TableRow<>();
-        Employee emp = new Employee(title.getText(), Integer.getInteger(id.getText()), Integer.getInteger(ssn.getText()), fn.getText(), ln.getText(), skills, Date.valueOf(birthdate.getText()), adress.getText(), town.getText(), sex.getText(), email.getText(), Integer.getInteger(yearsIn.getText()));
+        Employee emp = new Employee(title.getText(), Integer.getInteger(id.getText()), Integer.getInteger(ssn.getText()), fn.getText(), ln.getText(), new Skills(primarySchool.getText(), secondarySchool.getText(), college.getText(), education.getText(), Double.parseDouble(yearsIn.getText()), certificates.getText(), expireDate.getText()), Date.valueOf(birthdate.getText()), adress.getText(), town.getText(), sex.getText().charAt(0), email.getText(), Integer.getInteger(yearsIn.getText()));
         employees.add(emp);
-        employeeTableView.getChildrenUnmodifiable().add(emp);
+        employeeTableView.getItems().add(emp);
     }
     
     @FXML
     private void handleDeleteEmployeeButton(ActionEvent event) {
         Employee emp = employeeTableView.getSelectionModel().getSelectedItem();
         employees.remove(emp);
-        employeeTableView.getChildrenUnmodifiable().remove(emp);
+        employeeTableView.getItems().remove(emp);
     }
     
 
